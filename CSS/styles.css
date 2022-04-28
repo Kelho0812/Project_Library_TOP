@@ -1,0 +1,175 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    gap: 2px;
+    grid-template-rows: 1fr 8fr;
+    grid-template-columns: 1fr 8fr;
+}
+
+img {
+    transition: 0.7s;
+}
+
+img:hover {
+    cursor: pointer;
+    animation: normal;
+    transition: 0.2s;
+    transform: rotate(30deg);
+}
+
+button {
+    cursor: pointer;
+
+}
+
+.header {
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    background-color: #bcb3bd;
+    grid-column: 1/3;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    color: #85071e;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.header > .pageTitle {
+    justify-self: center;
+}
+
+.sideBar {
+    padding: 10px;
+    display: flex;
+
+    border-radius: 5px;
+    background-color: #d2b6d9;
+}
+
+.sideBar > button {
+    word-wrap: break-word;
+    max-height: 90px;
+    height: 67px;
+    background-color: #4caf50;
+    color: white;
+    border: 2px solid #bcb3bd;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 4px;
+}
+
+.sideBar > button:hover {
+    transition-duration: 0.4s;
+    background-color: #3e8e41;
+    color: white;
+}
+
+.mainScreen {
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    background-color: #e8d5e0;
+    padding: 10px;
+    gap: 10px;
+}
+
+.bookCards {
+    background-color: gray;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(1, 2fr) repeat(3, 1fr);
+    height: 300px;
+    border: solid red;
+    border-radius: 5px;
+}
+
+.bookTitle {
+    justify-self: center;
+}
+
+.form-popup {
+    transition: 0.3s;
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    width: 350px;
+    height: 500px;
+    margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+    left: 0;
+    right: 0;
+    border: 3px solid black;
+    z-index: 9;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 450px;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container > h1 {
+    align-self: center;
+}
+
+.form-container input
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+}
+
+.form-container input:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  .form-container > .buttonContainer {
+      margin-top: 30px;
+      width: inherit;
+      justify-content: space-evenly;
+      gap: 5px;
+      display: flex;
+  }
+
+  .form-container > .buttonContainer > button {
+    transition-duration: 0.2s;
+    height: 50px;
+    background-color: #4caf50;
+    color: white;
+    border: 2px solid #bcb3bd;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 4px;
+}
+
+
+
+#btnCancel {
+    background-color: red;
+}
+
+#btnCancel:hover {
+    transition-duration: 0.2s;
+    background-color: darkred;
+}
+
+#insertBook:hover {
+    background-color: darkgreen;
+
+}

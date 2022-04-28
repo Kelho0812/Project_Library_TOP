@@ -1,14 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="./CSS/styles.css">
-    <script src="./JS/script.js"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: Library</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <link rel="stylesheet" href="./CSS/styles.css" />
+        <script async src="./JS/script.js"></script>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Project: Library</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <img id="logoBook" src="./IMG/LogoBook.png" alt="" />
+
+                <div class="pageTitle">Kelho's Amazing Library</div>
+            </div>
+            <div class="sideBar">
+                <button type="button" id="newBookButton">New Book</button>
+            </div>
+            <div class="form-popup" id="myForm">
+                <form action="" class="form-container">
+                    <h1>Insert New Book</h1>
+
+                    <label for="bookTitle"><b>Title</b></label>
+                    <input
+                        id="bookTitle"
+                        type="text"
+                        placeholder="Enter Title"
+                        name="bookTitle"
+                        required
+                    />
+                    <label for="bookAuthor"><b>Author</b></label>
+                    <input
+                        id="bookAuthor"
+                        type="text"
+                        placeholder="Enter Author"
+                        name="bookAuthor"
+                        required
+                    />
+
+                    <label for="pages"><b>Page Count</b></label>
+                    <input
+                        id="bookPages"
+                        type="number"
+                        placeholder="Enter Nr of Pages"
+                        name="pages"
+                        required
+                    />
+                    <div class="buttonContainer">
+                        <button 
+                        type="button" 
+                        class="btn" 
+                        id="insertBook"
+                        >
+                            Add Book
+                        </button>
+                        <button
+                            id="btnCancel"
+                            type="button"
+                            class="btnCancel"
+                            onclick="closeForm()"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="mainScreen" id="mainScreen">
+                <div class="bookCards">
+                    <div class="bookTitle">Title</div>
+                    <div class="bookAuthor">Author:</div>
+
+                    <div class="bookPages">Pages:</div>
+
+                    <div class="bookRead">Read:</div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
+
+<!-- 
+    Credits:
+    BookLogo: <a href="https://www.freepik.com/vectors/notebook-icon">Notebook icon vector created by brgfx - www.freepik.com</a>
+-->
