@@ -8,9 +8,22 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+
+let deleteBooks = function () {
+    let attribute = this.getAttribute("data-index-number");
+    myLibrary.splice(attribute,1);
+    printBooks();
+};
+
+//This is the function that gets all the books from the myLibrary Array & then prints them out on the DOM. First it will delete all the DOM it created previously, to clean it, and then it will print a fresh batch.
 function printBooks() {
-    
-    for (let i = (myLibrary.length-1); i < myLibrary.length; i++) {
+    let mainScreen = document.getElementById("mainScreen");
+
+    while (mainScreen.hasChildNodes()) {
+        mainScreen.removeChild(mainScreen.firstChild);
+    }
+
+    for (let i = 0; i < myLibrary.length; i++) {
         const bookCard = document.createElement("div");
         bookCard.classList.add("bookCards");
         mainScreen.appendChild(bookCard);
@@ -21,24 +34,34 @@ function printBooks() {
         cardAuthor.classList.add("bookAuthor");
         const cardPages = document.createElement("div");
         cardPages.classList.add("bookPages");
-
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("deleteButton");
+        deleteButton.dataset.indexNumber = i;
 
         const authorHeader = document.createElement("h4");
         authorHeader.classList.add("author");
         const pagesHeader = document.createElement("h4");
         pagesHeader.classList.add("pages");
-        
+
         bookCard.appendChild(cardTitle);
         bookCard.appendChild(cardAuthor);
         bookCard.appendChild(cardPages);
         bookCard.appendChild(authorHeader);
         bookCard.appendChild(pagesHeader);
+        bookCard.appendChild(deleteButton);
 
         authorHeader.textContent = "Author: ";
         pagesHeader.textContent = "Pages: ";
         cardTitle.textContent = myLibrary[i].title;
         cardAuthor.textContent = myLibrary[i].author;
         cardPages.textContent = myLibrary[i].pages;
+        deleteButton.textContent = "X";
+    }
+
+    let deleteButtonList = document.getElementsByClassName("deleteButton");
+
+    for (l = 0; l < deleteButtonList.length; l++) {
+        deleteButtonList[l].addEventListener("click", deleteBooks, false);
     }
 }
 
