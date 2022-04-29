@@ -86,6 +86,7 @@ button {
 }
 
 .bookCards {
+    position: relative;
     font-family: 'Courier New', Courier, monospace;
     justify-items: start;
     align-items: center;
@@ -204,4 +205,10 @@ button {
 #insertBook:hover {
     background-color: darkgreen;
 
+}
+
+.bookCards > .deleteButton {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
