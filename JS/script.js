@@ -9,24 +9,32 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 function printBooks() {
-    for (let i = 0; i < myLibrary.length; i++) {
+    for (let i = (myLibrary.length-1); i < myLibrary.length; i++) {
         const bookCard = document.createElement("div");
         bookCard.classList.add("bookCards");
         mainScreen.appendChild(bookCard);
 
         const cardTitle = document.createElement("div");
         cardTitle.classList.add("bookTitle");
-        cardTitle.textContent = myLibrary[i].title;
+        const cardAuthor = document.createElement("div");
+        cardAuthor.classList.add("bookAuthor");
+        const cardPages = document.createElement("div");
+        cardPages.classList.add("bookPages");
+        
         bookCard.appendChild(cardTitle);
+        bookCard.appendChild(cardAuthor);
+        bookCard.appendChild(cardPages);
 
-        console.log(myLibrary[i].author);
+        cardTitle.textContent = myLibrary[i].title;
+        cardAuthor.textContent = myLibrary[i].author;
+        cardPages.textContent = myLibrary[i].pages;
     }
 }
 
 function AddToLibrary() {
-    bookTitle = document.getElementById("bookTitle").value;
-    bookAuthor = document.getElementById("bookAuthor").value;
-    bookPages = document.getElementById("bookPages").value;
+    bookTitle = document.getElementById("bookTitle").value; // Booktitle its whatever we write in the Book Title Input field
+    bookAuthor = document.getElementById("bookAuthor").value; // Book Author its whatever we write in the Book Author Input field
+    bookPages = document.getElementById("bookPages").value; // Book Pages its whatever we write in the Book Author Input field
 
     newBook = new Book(bookTitle, bookAuthor, bookPages);
 
@@ -46,8 +54,12 @@ function openForm() {
 }
 
 function closeForm() {
+    document.getElementById("bookTitle").value = "";
+    document.getElementById("bookAuthor").value = "";
+    document.getElementById("bookPages").value = "";
     document.getElementById("myForm").style.visibility = "hidden";
     document.getElementById("myForm").style.opacity = "0";
 }
 
 document.getElementById("newBookButton").addEventListener("click", openForm);
+document.getElementById("btnCancel").addEventListener("click", closeForm);
