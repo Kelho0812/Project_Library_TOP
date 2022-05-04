@@ -28,7 +28,7 @@ function printBooks() {
         bookCard.classList.add("bookCards");
         mainScreen.appendChild(bookCard);
 
-        const cardTitle = document.createElement("h3");
+        const cardTitle = document.createElement("div");
         cardTitle.classList.add("bookTitle");
         const cardAuthor = document.createElement("div");
         cardAuthor.classList.add("bookAuthor");
@@ -38,9 +38,9 @@ function printBooks() {
         deleteButton.classList.add("deleteButton");
         deleteButton.dataset.indexNumber = i;
 
-        const authorHeader = document.createElement("h4");
+        const authorHeader = document.createElement("div");
         authorHeader.classList.add("author");
-        const pagesHeader = document.createElement("h4");
+        const pagesHeader = document.createElement("div");
         pagesHeader.classList.add("pages");
 
         bookCard.appendChild(cardTitle);
