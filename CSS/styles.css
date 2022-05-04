@@ -144,7 +144,7 @@ button {
     opacity: 0;
     position: fixed;
     width: 350px;
-    height: 500px;
+    height: 540px;
     margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
     left: 0;
     right: 0;
@@ -178,7 +178,7 @@ button {
 }
 
 .form-container > .buttonContainer {
-    margin-top: 30px;
+    margin-top: 15px;
     width: inherit;
     justify-content: space-evenly;
     gap: 5px;
@@ -217,4 +217,9 @@ button {
     position: absolute;
     right: 10px;
     top: 10px;
+}
+input[type=checkbox] {
+    transform: scale(2);
+    margin-left: 7px;
+    margin-top: 15px;
 }
