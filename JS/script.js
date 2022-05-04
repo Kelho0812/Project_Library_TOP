@@ -42,21 +42,26 @@ function printBooks() {
         authorHeader.classList.add("author");
         const pagesHeader = document.createElement("div");
         pagesHeader.classList.add("pages");
+        const readHeader = document.createElement("div");
+        readHeader.classList.add("read");
 
         bookCard.appendChild(cardTitle);
         bookCard.appendChild(cardAuthor);
         bookCard.appendChild(cardPages);
         bookCard.appendChild(authorHeader);
         bookCard.appendChild(pagesHeader);
+        bookCard.appendChild(readHeader);
         bookCard.appendChild(deleteButton);
 
         authorHeader.textContent = "Author: ";
         pagesHeader.textContent = "Pages: ";
+        readHeader.textContent = "Read: ";
         cardTitle.textContent = myLibrary[i].title;
         cardAuthor.textContent = myLibrary[i].author;
         cardPages.textContent = myLibrary[i].pages;
         deleteButton.textContent = "X";
     }
+    
 
     let deleteButtonList = document.getElementsByClassName("deleteButton");
 
@@ -69,8 +74,9 @@ function AddToLibrary() {
     bookTitle = document.getElementById("bookTitle").value; // Booktitle its whatever we write in the Book Title Input field
     bookAuthor = document.getElementById("bookAuthor").value; // Book Author its whatever we write in the Book Author Input field
     bookPages = document.getElementById("bookPages").value; // Book Pages its whatever we write in the Book Author Input field
-
-    newBook = new Book(bookTitle, bookAuthor, bookPages);
+    bookRead = document.getElementById("bookRead").checked;
+        
+    newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
 
     if (bookTitle != "" && bookAuthor != "" && bookPages != "") {
         myLibrary.push(newBook);
